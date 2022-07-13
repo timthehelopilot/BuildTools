@@ -1,12 +1,18 @@
 // swift-tools-version: 5.6
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "BuildTools",
+    platforms: [
+      .iOS(.v13),
+      .watchOS(.v6),
+      .macOS(.v10_15),
+      .tvOS(.v13)
+    ],
     products: [
-      .plugin(name: "SwiftLint", targets: ["SwiftLint"]),
+      .plugin(name: "SwiftLint",
+              targets: ["SwiftLint"]),
     ],
     targets: [
       .binaryTarget(name: "SwiftLintBinary",
